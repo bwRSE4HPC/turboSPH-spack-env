@@ -12,13 +12,17 @@ spack:
   - packages:
     - mpi
     - cmake
-    - hdf5@1.10.5+cxx~mpi api=v110
+    - hdf5@1.10.5+cxx~mpi+hl api=v110  # need +hl for h5py
     - turbosph.h5hut@1.99.13~fortran~mpi
     - turbosph.ann@1.1.2
   specs:
   - matrix:
     - [$packages]
     - [$%compilers]
+  # newer cython versions aren't capable of compiling the older version of h5py
+  - py-cython@0.29.32
+  - py-numpy ^py-cython@0.29.32
+  - py-h5py ^py-cython@0.29.32
   view: true
   concretizer:
     unify: true
