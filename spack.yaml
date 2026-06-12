@@ -20,9 +20,7 @@ spack:
     - py-numpy ^py-cython@0.29.32
     - py-h5py ^py-cython@0.29.32
     # for profiling
-    - binutils+gprofng
     - hpctoolkit~cuda~level_zero+mpi~opencl~rocm~viewer
-    - intel-oneapi-vtune
     - likwid
   specs:
   - matrix:
