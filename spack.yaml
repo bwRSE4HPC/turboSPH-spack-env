@@ -8,7 +8,7 @@ spack:
     turbosph: spack_repo/turbosph
   definitions:
   # Need to use GCC 13 to build hdf5 v1.10
-  - compilers: [gcc@13.4.0]
+  - compilers: [gcc@13.3.0]
   - packages:
     - mpi
     - cmake
